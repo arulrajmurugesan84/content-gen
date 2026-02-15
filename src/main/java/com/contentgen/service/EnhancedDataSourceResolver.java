@@ -1,8 +1,6 @@
 package com.contentgen.service;
 
-import com.contentgen.config.ContentGenerationConfig;
 import com.contentgen.config.EnhancedContentGenerationConfig;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
@@ -23,7 +21,7 @@ public class EnhancedDataSourceResolver {
 
     private static final Logger logger = LoggerFactory.getLogger(EnhancedDataSourceResolver.class);
 
-    private final ObjectMapper objectMapper;
+
     private final Map<String, Object> dataSourceCache;
     private final Map<String, EnhancedContentGenerationConfig.DataSource> dataSourceConfigs;
     private final boolean cachingEnabled;
@@ -33,11 +31,9 @@ public class EnhancedDataSourceResolver {
     private final Configuration jsonPathConfig;
 
     public EnhancedDataSourceResolver(
-            ObjectMapper objectMapper,
             Map<String, EnhancedContentGenerationConfig.DataSource> dataSourceConfigs,
             boolean cachingEnabled,
             String basePath) {
-        this.objectMapper = objectMapper;
         this.dataSourceConfigs = dataSourceConfigs;
         this.cachingEnabled = cachingEnabled;
         this.basePath = basePath;

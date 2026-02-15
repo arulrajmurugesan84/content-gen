@@ -45,7 +45,6 @@ public class EnhancedContentGenerationServiceV2 {
 
         // Initialize data source resolver
         this.dataSourceResolver = new EnhancedDataSourceResolver(
-                objectMapper,
                 config.dataSources(),
                 config.options().cacheDataSources(),
                 basePath
