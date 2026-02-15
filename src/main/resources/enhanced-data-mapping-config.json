@@ -1,0 +1,285 @@
+{
+  "configVersion": "2.0",
+  "description": "Enhanced configuration with conditional selection, formatters, array support, and mandatory/optional fields",
+  "dataSources": {
+    "sales": {
+      "filePath": "sales.json",
+      "priority": 1
+    },
+    "inventory": {
+      "filePath": "inventory.json",
+      "priority": 2
+    },
+    "office": {
+      "filePath": "office.json",
+      "priority": 3
+    }
+  },
+  "mappings": [
+    {
+      "placeholder": "reportDate",
+      "source": "sales",
+      "jsonPath": "$.reportDate",
+      "formatter": {
+        "type": "date",
+        "inputFormat": "yyyy-MM-dd",
+        "outputFormat": "MMMM dd, yyyy"
+      },
+      "mandatory": true,
+      "fallbackSources": [
+        {
+          "source": "inventory",
+          "jsonPath": "$.reportDate"
+        }
+      ]
+    },
+    {
+      "placeholder": "authorName",
+      "source": "sales",
+      "jsonPath": "$.author",
+      "mandatory": true,
+      "fallbackSources": [
+        {
+          "source": "inventory",
+          "jsonPath": "$.authorName"
+        },
+        {
+          "source": "office",
+          "jsonPath": "$.authorName"
+        }
+      ]
+    },
+    {
+      "placeholder": "inventoryReportDate",
+      "source": "inventory",
+      "jsonPath": "$.inventoryReportDate",
+      "formatter": {
+        "type": "date",
+        "inputFormat": "yyyy-MM-dd",
+        "outputFormat": "MM/dd/yyyy"
+      },
+      "mandatory": false,
+      "defaultValue": "N/A"
+    },
+    {
+      "placeholder": "inventoryAuthorName",
+      "source": "inventory",
+      "jsonPath": "$.inventoryAuthorName",
+      "mandatory": false,
+      "defaultValue": "Unknown"
+    },
+    {
+      "placeholder": "generationDate",
+      "source": "office",
+      "jsonPath": "$.generationDate",
+      "formatter": {
+        "type": "date",
+        "inputFormat": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+        "outputFormat": "yyyy-MM-dd HH:mm:ss"
+      },
+      "mandatory": true
+    },
+    {
+      "placeholder": "contactEmail",
+      "source": "office",
+      "jsonPath": "$.contactEmail",
+      "mandatory": true
+    },
+    {
+      "placeholder": "street",
+      "source": "sales",
+      "jsonPath": "$.address[?(@.type == 'MAILING')].street",
+      "description": "Address Line 1 - Mandatory with parent collection validation",
+      "mandatory": true,
+      "parentCollectionPath": "$.address",
+      "validateParentNotEmpty": true,
+      "conditionalSelection": {
+        "enabled": true,
+        "conditions": [
+          {
+            "jsonPath": "$.address[?(@.type == 'MAILING')].street",
+            "description": "Try MAILING address first"
+          },
+          {
+            "jsonPath": "$.address[?(@.type == 'PHYSICAL')].street",
+            "description": "Fallback to PHYSICAL address"
+          },
+          {
+            "jsonPath": "$.address[0].street",
+            "description": "Fallback to first address if no type match"
+          }
+        ],
+        "extractFirstElement": true
+      }
+    },
+    {
+      "placeholder": "streetLine2",
+      "source": "sales",
+      "jsonPath": "$.address[?(@.type == 'MAILING')].streetLine2",
+      "description": "Address Line 2 - Optional",
+      "mandatory": false,
+      "defaultValue": "",
+      "conditionalSelection": {
+        "enabled": true,
+        "conditions": [
+          {
+            "jsonPath": "$.address[?(@.type == 'MAILING')].streetLine2",
+            "description": "Try MAILING address line 2"
+          },
+          {
+            "jsonPath": "$.address[?(@.type == 'PHYSICAL')].streetLine2",
+            "description": "Fallback to PHYSICAL address line 2"
+          }
+        ],
+        "extractFirstElement": true
+      }
+    },
+    {
+      "placeholder": "city",
+      "source": "sales",
+      "jsonPath": "$.address[?(@.type == 'MAILING')].city",
+      "mandatory": true,
+      "parentCollectionPath": "$.address",
+      "validateParentNotEmpty": true,
+      "conditionalSelection": {
+        "enabled": true,
+        "conditions": [
+          {
+            "jsonPath": "$.address[?(@.type == 'MAILING')].city"
+          },
+          {
+            "jsonPath": "$.address[?(@.type == 'PHYSICAL')].city"
+          },
+          {
+            "jsonPath": "$.address[0].city"
+          }
+        ],
+        "extractFirstElement": true
+      }
+    },
+    {
+      "placeholder": "state",
+      "source": "sales",
+      "jsonPath": "$.address[?(@.type == 'MAILING')].state",
+      "mandatory": true,
+      "parentCollectionPath": "$.address",
+      "validateParentNotEmpty": true,
+      "conditionalSelection": {
+        "enabled": true,
+        "conditions": [
+          {
+            "jsonPath": "$.address[?(@.type == 'MAILING')].state"
+          },
+          {
+            "jsonPath": "$.address[?(@.type == 'PHYSICAL')].state"
+          },
+          {
+            "jsonPath": "$.address[0].state"
+          }
+        ],
+        "extractFirstElement": true
+      }
+    },
+    {
+      "placeholder": "zipCode",
+      "source": "sales",
+      "jsonPath": "$.address[?(@.type == 'MAILING')].zip",
+      "mandatory": true,
+      "parentCollectionPath": "$.address",
+      "validateParentNotEmpty": true,
+      "conditionalSelection": {
+        "enabled": true,
+        "conditions": [
+          {
+            "jsonPath": "$.address[?(@.type == 'MAILING')].zip"
+          },
+          {
+            "jsonPath": "$.address[?(@.type == 'PHYSICAL')].zip"
+          },
+          {
+            "jsonPath": "$.address[0].zip"
+          }
+        ],
+        "extractFirstElement": true
+      }
+    },
+    {
+      "placeholder": "phoneNumber",
+      "source": "sales",
+      "jsonPath": "$.phoneNumber",
+      "mandatory": false,
+      "defaultValue": "Not Provided",
+      "description": "Optional phone number"
+    },
+    {
+      "placeholder": "faxNumber",
+      "source": "sales",
+      "jsonPath": "$.faxNumber",
+      "mandatory": false,
+      "defaultValue": "",
+      "description": "Optional fax number - empty string if not present"
+    },
+    {
+      "placeholder": "inventoryItems",
+      "source": "inventory",
+      "jsonPath": "$.inventory",
+      "description": "Array of inventory items for looping in template",
+      "mandatory": true
+    },
+    {
+      "placeholder": "totalInventoryValue",
+      "source": "inventory",
+      "jsonPath": "$.inventory",
+      "formatter": {
+        "type": "currency",
+        "currencyCode": "USD",
+        "locale": "en_US"
+      },
+      "customCalculation": {
+        "type": "sum",
+        "field": "price",
+        "description": "Sum all inventory item prices"
+      },
+      "mandatory": true
+    },
+    {
+      "placeholder": "inventoryCount",
+      "source": "inventory",
+      "jsonPath": "$.inventory.length()",
+      "formatter": {
+        "type": "number",
+        "locale": "en_US",
+        "useGrouping": true
+      },
+      "mandatory": true
+    }
+  ],
+  "formatters": {
+    "date": {
+      "defaultInputFormat": "yyyy-MM-dd",
+      "defaultOutputFormat": "MM/dd/yyyy",
+      "locale": "en_US",
+      "timezone": "UTC"
+    },
+    "currency": {
+      "defaultCurrency": "USD",
+      "defaultLocale": "en_US",
+      "symbolPosition": "before",
+      "decimalPlaces": 2
+    },
+    "number": {
+      "defaultLocale": "en_US",
+      "useGrouping": true,
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 2
+    }
+  },
+  "options": {
+    "cacheDataSources": true,
+    "strictMode": false,
+    "defaultValue": "",
+    "enableLogging": true,
+    "enableConditionalSelection": true,
+    "enableFormatters": true
+  }
+}

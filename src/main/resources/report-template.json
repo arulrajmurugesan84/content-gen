@@ -1,0 +1,30 @@
+{
+    "content":[
+        {
+            "name":"Sales Data",
+            "reportTitle":"Monthly Sales Report",
+            "reportDate":"{{reportDate}}",
+            "author":"{{authorName}}"
+        },
+        {
+            "name":"Inventory Data",
+            "reportTitle":"Inventory Status Report",
+            "reportDate":"{{inventoryReportDate}}",
+            "author":"{{inventoryAuthorName}}"
+        }
+    ],
+    "metadata":{
+        "generatedBy":"Report Generator v1.0",
+        "generatedOn":"{{generationDate}}"
+    },
+    "additionalInfo":{
+        "notes":"This report is confidential and intended for internal use only.",
+        "contact":"For inquiries, contact {{contactEmail}}"
+    },
+    "officeAddress": {
+        "street": "{{street}}",
+        "city": "{{city}}",
+        "state": "{{state}}",
+        "zipCode": "{{zipCode}}"
+    }
+}

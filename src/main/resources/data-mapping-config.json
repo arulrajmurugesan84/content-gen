@@ -1,0 +1,72 @@
+{
+  "configVersion": "1.0",
+  "description": "Configuration for resolving Handlebars template placeholders from multiple JSON data sources",
+  "dataSources": {
+    "sales": {
+      "filePath": "sales.json",
+      "priority": 1
+    },
+    "inventory": {
+      "filePath": "inventory.json",
+      "priority": 2
+    },
+    "office": {
+      "filePath": "office.json",
+      "priority": 3
+    }
+  },
+  "mappings": [
+    {
+      "placeholder": "reportDate",
+      "source": "sales",
+      "jsonPath": "$.reportDate",
+      "fallbackSources": [
+        {
+          "source": "inventory",
+          "jsonPath": "$.reportDate"
+        }
+      ]
+    },
+    {
+      "placeholder": "authorName",
+      "source": "sales",
+      "jsonPath": "$.author",
+      "fallbackSources": [
+        {
+          "source": "inventory",
+          "jsonPath": "$.authorName"
+        },
+        {
+          "source": "office",
+          "jsonPath": "$.authorName"
+        }
+      ]
+    },
+    {
+      "placeholder": "inventoryReportDate",
+      "source": "inventory",
+      "jsonPath": "$.inventoryReportDate"
+    },
+    {
+      "placeholder": "inventoryAuthorName",
+      "source": "inventory",
+      "jsonPath": "$.inventoryAuthorName"
+    },
+    {
+      "placeholder": "generationDate",
+      "source": "office",
+      "jsonPath": "$.generationDate"
+    },
+    {
+      "placeholder": "contactEmail",
+      "source": "office",
+      "jsonPath": "$.contactEmail"
+    }
+  ],
+  "options": {
+    "cacheDataSources": true,
+    "strictMode": false,
+    "defaultValue": "",
+    "enableLogging": true
+  }
+}

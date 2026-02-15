@@ -1,0 +1,22 @@
+{
+    "name": "Sales",
+    "reportTitle": "Monthly Sales Report",
+    "reportDate": "2024-06-30",
+    "author": "John Doe",
+    "address":[
+        {
+            "type": "MAILING",
+            "street": "123 Main St",
+            "city": "Anytown",
+            "state": "CA",
+            "zip": "12345"
+        },
+        {
+            "type": "PHYSICAL",
+            "street": "456 Elm St",
+            "city": "Othertown",
+            "state": "NY",
+            "zip": "67890"
+        }
+    ]
+}

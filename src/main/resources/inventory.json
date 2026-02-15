@@ -1,0 +1,34 @@
+{
+    "inventory": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "quantity": 10,
+            "price": 999.99
+        },
+        {
+            "id": 2,
+            "name": "Smartphone",
+            "quantity": 25,
+            "price": 499.99
+        },
+        {
+            "id": 3,
+            "name": "Headphones",
+            "quantity": 50,
+            "price": 199.99
+        }
+    ],
+    "reportDate": "2024-06-30",
+    "authorName": "Jane Smith",
+    "inventoryReportDate": "2024-06-30",
+    "inventoryAuthorName": "Jane Smith",
+    "address": [
+        {
+            "street": "789 Oak St",
+            "city": "Sometown",
+            "state": "TX",
+            "zip": "54321"
+        }
+    ]
+}

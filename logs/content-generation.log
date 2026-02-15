@@ -1,0 +1,323 @@
+2026-02-14 22:47:57.438 [main] ERROR c.contentgen.ContentGenerationDemo - Demo failed with error
+java.io.IOException: Configuration file not found: data\data-mapping-config.json
+	at com.contentgen.service.ContentGenerationService.loadConfiguration(ContentGenerationService.java:76)
+	at com.contentgen.service.ContentGenerationService.<init>(ContentGenerationService.java:37)
+	at com.contentgen.ContentGenerationDemo.main(ContentGenerationDemo.java:27)
+2026-02-14 22:49:10.064 [main] INFO  c.c.service.ContentGenerationService - Loaded configuration version: 1.0
+2026-02-14 22:49:10.082 [main] INFO  c.c.service.DataSourceResolver - Preloading 3 data sources
+2026-02-14 22:49:10.083 [main] DEBUG c.c.service.DataSourceResolver - Loading data source 'sales' from: C:\Arul-work\content-gen\src\main\resources\sales.json
+2026-02-14 22:49:10.085 [main] DEBUG c.c.service.DataSourceResolver - Successfully loaded data source: sales
+2026-02-14 22:49:10.085 [main] DEBUG c.c.service.DataSourceResolver - Loading data source 'inventory' from: C:\Arul-work\content-gen\src\main\resources\inventory.json
+2026-02-14 22:49:10.086 [main] DEBUG c.c.service.DataSourceResolver - Successfully loaded data source: inventory
+2026-02-14 22:49:10.086 [main] DEBUG c.c.service.DataSourceResolver - Loading data source 'office' from: C:\Arul-work\content-gen\src\main\resources\office.json
+2026-02-14 22:49:10.087 [main] DEBUG c.c.service.DataSourceResolver - Successfully loaded data source: office
+2026-02-14 22:49:10.087 [main] INFO  c.c.service.DataSourceResolver - Successfully preloaded all data sources
+2026-02-14 22:49:10.087 [main] INFO  c.contentgen.ContentGenerationDemo - === Content Generation Service Demo ===
+
+2026-02-14 22:49:10.087 [main] INFO  c.contentgen.ContentGenerationDemo - --- Service Statistics ---
+2026-02-14 22:49:10.087 [main] INFO  c.contentgen.ContentGenerationDemo - cachingEnabled: true
+2026-02-14 22:49:10.087 [main] INFO  c.contentgen.ContentGenerationDemo - dataSourceCount: 3
+2026-02-14 22:49:10.087 [main] INFO  c.contentgen.ContentGenerationDemo - cacheStats: {configuredSources=3, cachedSources=3}
+2026-02-14 22:49:10.087 [main] INFO  c.contentgen.ContentGenerationDemo - configVersion: 1.0
+2026-02-14 22:49:10.088 [main] INFO  c.contentgen.ContentGenerationDemo - mappingCount: 6
+2026-02-14 22:49:10.088 [main] INFO  c.contentgen.ContentGenerationDemo - 
+2026-02-14 22:49:10.088 [main] INFO  c.contentgen.ContentGenerationDemo - --- Resolved Context ---
+2026-02-14 22:49:10.088 [main] INFO  c.c.service.PlaceholderResolver - Resolving 6 placeholders
+2026-02-14 22:49:10.088 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'sales' with path '$.reportDate'
+2026-02-14 22:49:10.088 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: sales
+2026-02-14 22:49:10.099 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.reportDate -> 2024-06-30
+2026-02-14 22:49:10.099 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'reportDate' = '2024-06-30'
+2026-02-14 22:49:10.099 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'sales' with path '$.author'
+2026-02-14 22:49:10.099 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: sales
+2026-02-14 22:49:10.099 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.author -> John Doe
+2026-02-14 22:49:10.099 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'authorName' = 'John Doe'
+2026-02-14 22:49:10.099 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryReportDate'
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: inventory
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.inventoryReportDate -> 2024-06-30
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'inventoryReportDate' = '2024-06-30'
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryAuthorName'
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: inventory
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.inventoryAuthorName -> Jane Smith
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'inventoryAuthorName' = 'Jane Smith'
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'office' with path '$.generationDate'
+2026-02-14 22:49:10.100 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: office
+2026-02-14 22:49:10.101 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.generationDate -> 2024-06-01T12:00:00Z
+2026-02-14 22:49:10.101 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'generationDate' = '2024-06-01T12:00:00Z'
+2026-02-14 22:49:10.101 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'office' with path '$.contactEmail'
+2026-02-14 22:49:10.101 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: office
+2026-02-14 22:49:10.101 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.contactEmail -> office@office.com
+2026-02-14 22:49:10.101 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'contactEmail' = 'office@office.com'
+2026-02-14 22:49:10.101 [main] INFO  c.c.service.PlaceholderResolver - Successfully resolved all placeholders
+2026-02-14 22:49:10.109 [main] INFO  c.contentgen.ContentGenerationDemo - Context:
+{
+  "inventoryReportDate" : "2024-06-30",
+  "reportDate" : "2024-06-30",
+  "inventoryAuthorName" : "Jane Smith",
+  "contactEmail" : "office@office.com",
+  "authorName" : "John Doe",
+  "generationDate" : "2024-06-01T12:00:00Z"
+}
+
+2026-02-14 22:49:10.109 [main] INFO  c.contentgen.ContentGenerationDemo - --- Generate from Template File ---
+2026-02-14 22:49:10.109 [main] INFO  c.c.service.ContentGenerationService - Generating content from template: report-template.json
+2026-02-14 22:49:10.109 [main] INFO  c.c.service.PlaceholderResolver - Resolving 6 placeholders
+2026-02-14 22:49:10.109 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'sales' with path '$.reportDate'
+2026-02-14 22:49:10.109 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: sales
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.reportDate -> 2024-06-30
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'reportDate' = '2024-06-30'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'sales' with path '$.author'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: sales
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.author -> John Doe
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'authorName' = 'John Doe'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryReportDate'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: inventory
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.inventoryReportDate -> 2024-06-30
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'inventoryReportDate' = '2024-06-30'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryAuthorName'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: inventory
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.inventoryAuthorName -> Jane Smith
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'inventoryAuthorName' = 'Jane Smith'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'office' with path '$.generationDate'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: office
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.generationDate -> 2024-06-01T12:00:00Z
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'generationDate' = '2024-06-01T12:00:00Z'
+2026-02-14 22:49:10.110 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'office' with path '$.contactEmail'
+2026-02-14 22:49:10.111 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: office
+2026-02-14 22:49:10.111 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.contactEmail -> office@office.com
+2026-02-14 22:49:10.111 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'contactEmail' = 'office@office.com'
+2026-02-14 22:49:10.111 [main] INFO  c.c.service.PlaceholderResolver - Successfully resolved all placeholders
+2026-02-14 22:49:10.174 [main] INFO  c.c.service.ContentGenerationService - Successfully generated content
+2026-02-14 22:49:10.178 [main] INFO  c.contentgen.ContentGenerationDemo - Generated content:
+{
+  "content" : [ {
+    "name" : "Sales Data",
+    "reportTitle" : "Monthly Sales Report",
+    "reportDate" : "2024-06-30",
+    "author" : "John Doe"
+  }, {
+    "name" : "Inventory Data",
+    "reportTitle" : "Inventory Status Report",
+    "reportDate" : "2024-06-30",
+    "author" : "Jane Smith"
+  } ],
+  "metadata" : {
+    "generatedBy" : "Report Generator v1.0",
+    "generatedOn" : "2024-06-01T12:00:00Z"
+  },
+  "additionalInfo" : {
+    "notes" : "This report is confidential and intended for internal use only.",
+    "contact" : "For inquiries, contact office@office.com"
+  }
+}
+
+2026-02-14 22:49:10.178 [main] INFO  c.contentgen.ContentGenerationDemo - --- Generate from Inline Template ---
+2026-02-14 22:49:10.178 [main] INFO  c.c.service.ContentGenerationService - Generating content from template string
+2026-02-14 22:49:10.178 [main] INFO  c.c.service.PlaceholderResolver - Resolving 6 placeholders
+2026-02-14 22:49:10.178 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'sales' with path '$.reportDate'
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: sales
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.reportDate -> 2024-06-30
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'reportDate' = '2024-06-30'
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'sales' with path '$.author'
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: sales
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.author -> John Doe
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'authorName' = 'John Doe'
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryReportDate'
+2026-02-14 22:49:10.179 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: inventory
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.inventoryReportDate -> 2024-06-30
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'inventoryReportDate' = '2024-06-30'
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryAuthorName'
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: inventory
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.inventoryAuthorName -> Jane Smith
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'inventoryAuthorName' = 'Jane Smith'
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'office' with path '$.generationDate'
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: office
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.generationDate -> 2024-06-01T12:00:00Z
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'generationDate' = '2024-06-01T12:00:00Z'
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Resolving value from source 'office' with path '$.contactEmail'
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Returning cached data source: office
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.DataSourceResolver - Resolved value: $.contactEmail -> office@office.com
+2026-02-14 22:49:10.180 [main] DEBUG c.c.service.PlaceholderResolver - Resolved 'contactEmail' = 'office@office.com'
+2026-02-14 22:49:10.180 [main] INFO  c.c.service.PlaceholderResolver - Successfully resolved all placeholders
+2026-02-14 22:49:10.182 [main] INFO  c.c.service.ContentGenerationService - Successfully generated content
+2026-02-14 22:49:10.183 [main] INFO  c.contentgen.ContentGenerationDemo - Generated content:
+{
+  "report" : {
+    "title" : "Quick Report",
+    "date" : "2024-06-30",
+    "author" : "John Doe",
+    "contact" : "office@office.com"
+  }
+}
+
+2026-02-14 22:49:10.183 [main] INFO  c.contentgen.ContentGenerationDemo - --- Generate with Additional Context ---
+2026-02-14 22:49:10.220 [main] INFO  c.c.service.ContentGenerationService - Generating content with additional context
+2026-02-14 22:49:10.221 [main] ERROR c.contentgen.ContentGenerationDemo - Demo failed with error
+java.io.IOException: Template file not found: C:\Arul-work\content-gen\src\main\resources\template13213227691393444508.json
+	at com.contentgen.service.ContentGenerationService.generateContentWithContext(ContentGenerationService.java:143)
+	at com.contentgen.ContentGenerationDemo.demonstrateAdditionalContext(ContentGenerationDemo.java:121)
+	at com.contentgen.ContentGenerationDemo.main(ContentGenerationDemo.java:44)
+2026-02-14 23:10:41.453 [main] INFO  c.c.s.EnhancedContentGenerationServiceV2 - Loaded enhanced configuration version: 2.0
+2026-02-14 23:10:41.478 [main] INFO  c.c.s.EnhancedDataSourceResolver - Preloading 3 data sources
+2026-02-14 23:10:41.479 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Loading data source 'sales' from: C:\Arul-work\content-gen\src\main\resources\sales.json
+2026-02-14 23:10:41.481 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Successfully loaded data source: sales
+2026-02-14 23:10:41.482 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Loading data source 'inventory' from: C:\Arul-work\content-gen\src\main\resources\inventory.json
+2026-02-14 23:10:41.484 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Successfully loaded data source: inventory
+2026-02-14 23:10:41.484 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Loading data source 'office' from: C:\Arul-work\content-gen\src\main\resources\office.json
+2026-02-14 23:10:41.485 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Successfully loaded data source: office
+2026-02-14 23:10:41.486 [main] INFO  c.c.s.EnhancedDataSourceResolver - Successfully preloaded all data sources
+2026-02-14 23:10:41.486 [main] INFO  c.c.s.EnhancedContentGenerationServiceV2 - Enhanced service initialized with formatters and conditional selection
+2026-02-14 23:10:41.486 [main] INFO  c.c.EnhancedContentGenerationDemo - === Enhanced Content Generation Service Demo ===
+
+2026-02-14 23:10:41.486 [main] INFO  c.c.EnhancedContentGenerationDemo - --- Service Statistics ---
+2026-02-14 23:10:41.486 [main] INFO  c.c.EnhancedContentGenerationDemo - mappingCount: 13
+2026-02-14 23:10:41.486 [main] INFO  c.c.EnhancedContentGenerationDemo - cachingEnabled: true
+2026-02-14 23:10:41.486 [main] INFO  c.c.EnhancedContentGenerationDemo - conditionalSelectionEnabled: true
+2026-02-14 23:10:41.487 [main] INFO  c.c.EnhancedContentGenerationDemo - dataSourceCount: 3
+2026-02-14 23:10:41.487 [main] INFO  c.c.EnhancedContentGenerationDemo - formattersEnabled: true
+2026-02-14 23:10:41.487 [main] INFO  c.c.EnhancedContentGenerationDemo - configVersion: 2.0
+2026-02-14 23:10:41.487 [main] INFO  c.c.EnhancedContentGenerationDemo - cacheStats: {cachedSources=3, configuredSources=3}
+2026-02-14 23:10:41.487 [main] INFO  c.c.EnhancedContentGenerationDemo - 
+2026-02-14 23:10:41.487 [main] INFO  c.c.EnhancedContentGenerationDemo - --- Resolved Context (with Formatters Applied) ---
+2026-02-14 23:10:41.487 [main] INFO  c.c.s.EnhancedPlaceholderResolver - Resolving 13 placeholders
+2026-02-14 23:10:41.487 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.reportDate'
+2026-02-14 23:10:41.487 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.497 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.reportDate -> 2024-06-30
+2026-02-14 23:10:41.510 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'reportDate' = 'June 30, 2024'
+2026-02-14 23:10:41.510 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.author'
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.author -> John Doe
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'authorName' = 'John Doe'
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryReportDate'
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventoryReportDate -> 2024-06-30
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryReportDate' = '06/30/2024'
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryAuthorName'
+2026-02-14 23:10:41.511 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.512 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventoryAuthorName -> Jane Smith
+2026-02-14 23:10:41.512 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryAuthorName' = 'Jane Smith'
+2026-02-14 23:10:41.512 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'office' with path '$.generationDate'
+2026-02-14 23:10:41.512 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: office
+2026-02-14 23:10:41.512 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.generationDate -> 2024-06-01T12:00:00Z
+2026-02-14 23:10:41.513 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'generationDate' = '2024-06-01 12:00:00'
+2026-02-14 23:10:41.513 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'office' with path '$.contactEmail'
+2026-02-14 23:10:41.513 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: office
+2026-02-14 23:10:41.513 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.contactEmail -> office@office.com
+2026-02-14 23:10:41.513 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'contactEmail' = 'office@office.com'
+2026-02-14 23:10:41.513 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].street'
+2026-02-14 23:10:41.513 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.524 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].street -> ["123 Main St"]
+2026-02-14 23:10:41.524 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Condition matched: Try MAILING address first
+2026-02-14 23:10:41.524 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'street' using conditional selection
+2026-02-14 23:10:41.524 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'street' = '123 Main St'
+2026-02-14 23:10:41.524 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].city'
+2026-02-14 23:10:41.524 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].city -> ["Anytown"]
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'city' using conditional selection
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'city' = 'Anytown'
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].state'
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].state -> ["CA"]
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'state' using conditional selection
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'state' = 'CA'
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].zip'
+2026-02-14 23:10:41.525 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.526 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].zip -> ["12345"]
+2026-02-14 23:10:41.526 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'zipCode' using conditional selection
+2026-02-14 23:10:41.526 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'zipCode' = '12345'
+2026-02-14 23:10:41.526 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventory'
+2026-02-14 23:10:41.526 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.526 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventory -> [{"id":1,"name":"Laptop","quantity":10,"price":999.99},{"id":2,"name":"Smartphone","quantity":25,"price":499.99},{"id":3,"name":"Headphones","quantity":50,"price":199.99}]
+2026-02-14 23:10:41.526 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryItems' = '[{"id":1,"name":"Laptop","quantity":10,"price":999.99},{"id":2,"name":"Smartphone","quantity":25,"price":499.99},{"id":3,"name":"Headphones","quantity":50,"price":199.99}]'
+2026-02-14 23:10:41.527 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventory'
+2026-02-14 23:10:41.527 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.527 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventory -> [{"id":1,"name":"Laptop","quantity":10,"price":999.99},{"id":2,"name":"Smartphone","quantity":25,"price":499.99},{"id":3,"name":"Headphones","quantity":50,"price":199.99}]
+2026-02-14 23:10:41.546 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'totalInventoryValue' = '$1,699.97'
+2026-02-14 23:10:41.547 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventory.length()'
+2026-02-14 23:10:41.547 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.550 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventory.length() -> 3
+2026-02-14 23:10:41.551 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryCount' = '3'
+2026-02-14 23:10:41.551 [main] INFO  c.c.s.EnhancedPlaceholderResolver - Successfully resolved all placeholders
+2026-02-14 23:10:41.551 [main] INFO  c.c.EnhancedContentGenerationDemo - Report Date (formatted): June 30, 2024
+2026-02-14 23:10:41.551 [main] INFO  c.c.EnhancedContentGenerationDemo - Generation Date (formatted): 2024-06-01 12:00:00
+2026-02-14 23:10:41.551 [main] INFO  c.c.EnhancedContentGenerationDemo - Total Inventory Value (formatted): $1,699.97
+2026-02-14 23:10:41.551 [main] INFO  c.c.EnhancedContentGenerationDemo - Inventory Count (formatted): 3
+2026-02-14 23:10:41.551 [main] INFO  c.c.EnhancedContentGenerationDemo - 
+2026-02-14 23:10:41.551 [main] INFO  c.c.EnhancedContentGenerationDemo - --- Conditional Address Selection Demo ---
+2026-02-14 23:10:41.552 [main] INFO  c.c.EnhancedContentGenerationDemo - Config is set to prefer MAILING address, fallback to PHYSICAL
+
+2026-02-14 23:10:41.552 [main] INFO  c.c.s.EnhancedPlaceholderResolver - Resolving 13 placeholders
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.reportDate'
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.reportDate -> 2024-06-30
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'reportDate' = 'June 30, 2024'
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.author'
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.author -> John Doe
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'authorName' = 'John Doe'
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryReportDate'
+2026-02-14 23:10:41.552 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventoryReportDate -> 2024-06-30
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryReportDate' = '06/30/2024'
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventoryAuthorName'
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventoryAuthorName -> Jane Smith
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryAuthorName' = 'Jane Smith'
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'office' with path '$.generationDate'
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: office
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.generationDate -> 2024-06-01T12:00:00Z
+2026-02-14 23:10:41.553 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'generationDate' = '2024-06-01 12:00:00'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'office' with path '$.contactEmail'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: office
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.contactEmail -> office@office.com
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'contactEmail' = 'office@office.com'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].street'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].street -> ["123 Main St"]
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Condition matched: Try MAILING address first
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'street' using conditional selection
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'street' = '123 Main St'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].city'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].city -> ["Anytown"]
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'city' using conditional selection
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'city' = 'Anytown'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].state'
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].state -> ["CA"]
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'state' using conditional selection
+2026-02-14 23:10:41.554 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'state' = 'CA'
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'sales' with path '$.address[?(@.type == 'MAILING')].zip'
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: sales
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.address[?(@.type == 'MAILING')].zip -> ["12345"]
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'zipCode' using conditional selection
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'zipCode' = '12345'
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventory'
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventory -> [{"id":1,"name":"Laptop","quantity":10,"price":999.99},{"id":2,"name":"Smartphone","quantity":25,"price":499.99},{"id":3,"name":"Headphones","quantity":50,"price":199.99}]
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryItems' = '[{"id":1,"name":"Laptop","quantity":10,"price":999.99},{"id":2,"name":"Smartphone","quantity":25,"price":499.99},{"id":3,"name":"Headphones","quantity":50,"price":199.99}]'
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventory'
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.555 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventory -> [{"id":1,"name":"Laptop","quantity":10,"price":999.99},{"id":2,"name":"Smartphone","quantity":25,"price":499.99},{"id":3,"name":"Headphones","quantity":50,"price":199.99}]
+2026-02-14 23:10:41.556 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'totalInventoryValue' = '$1,699.97'
+2026-02-14 23:10:41.556 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolving value from source 'inventory' with path '$.inventory.length()'
+2026-02-14 23:10:41.556 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Returning cached data source: inventory
+2026-02-14 23:10:41.556 [main] DEBUG c.c.s.EnhancedDataSourceResolver - Resolved value: $.inventory.length() -> 3
+2026-02-14 23:10:41.556 [main] DEBUG c.c.s.EnhancedPlaceholderResolver - Resolved 'inventoryCount' = '3'
+2026-02-14 23:10:41.556 [main] INFO  c.c.s.EnhancedPlaceholderResolver - Successfully resolved all placeholders
+2026-02-14 23:10:41.556 [main] INFO  c.c.EnhancedContentGenerationDemo - Selected Address:
+2026-02-14 23:10:41.556 [main] INFO  c.c.EnhancedContentGenerationDemo -   Street: 123 Main St
+2026-02-14 23:10:41.556 [main] INFO  c.c.EnhancedContentGenerationDemo -   City: Anytown
+2026-02-14 23:10:41.556 [main] INFO  c.c.EnhancedContentGenerationDemo -   State: CA
+2026-02-14 23:10:41.556 [main] INFO  c.c.EnhancedContentGenerationDemo -   Zip: 12345
+2026-02-14 23:10:41.557 [main] INFO  c.c.EnhancedContentGenerationDemo - 
+2026-02-14 23:10:41.557 [main] INFO  c.c.EnhancedContentGenerationDemo - This should be the MAILING address (123 Main St, Anytown, CA 12345)
+2026-02-14 23:10:41.557 [main] INFO  c.c.EnhancedContentGenerationDemo - If MAILING is not available, it falls back to PHYSICAL address
+
+2026-02-14 23:10:41.557 [main] INFO  c.c.EnhancedContentGenerationDemo - --- Inventory Loop Example ---
+2026-02-14 23:10:41.557 [main] INFO  c.c.s.EnhancedContentGenerationServiceV2 - Generating content from template: inventory-loop-example.json
+2026-02-14 23:10:41.558 [main] ERROR c.c.EnhancedContentGenerationDemo - Demo failed with error
+java.io.IOException: Template file not found: C:\Arul-work\content-gen\src\main\resources\inventory-loop-example.json
+	at com.contentgen.service.EnhancedContentGenerationServiceV2.generateContent(EnhancedContentGenerationServiceV2.java:109)
+	at com.contentgen.service.EnhancedContentGenerationServiceV2.generateContentAsJson(EnhancedContentGenerationServiceV2.java:146)
+	at com.contentgen.EnhancedContentGenerationDemo.demonstrateInventoryLoop(EnhancedContentGenerationDemo.java:107)
+	at com.contentgen.EnhancedContentGenerationDemo.main(EnhancedContentGenerationDemo.java:48)
